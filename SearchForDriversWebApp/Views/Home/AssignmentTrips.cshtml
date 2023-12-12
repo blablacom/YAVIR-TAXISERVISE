@@ -1,0 +1,32 @@
+﻿@model IEnumerable<SearchForDriversWebApp.Models.Assignment>
+
+<body style="background-color: #EBEFF2;">
+
+    <h2 class="text-center">Перегляд поїздок</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>Відстань</th>
+                <th>Ціна</th>
+                <th>ПІБ</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var assignment in Model)
+            {
+                <tr>
+                    <td>@assignment.Trip.DepartureLocation</td>
+                    <td>@assignment.Trip.ArrivalLocation</td>
+                    <td>@assignment.Trip.Distance</td>
+                    <td>@assignment.Price</td>
+                    <td>@assignment.User.Username</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
